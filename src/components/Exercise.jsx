@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 
 
@@ -8,7 +9,9 @@ import Form from 'react-bootstrap/Form';
 const Exercise = () => {
 
 
-  const [type, setType] = useState("")
+  const [type, setType] = useState("cardio")
+  const [displayData, setDisplayData] = useState(false)
+  const [exerciseData, setExerciseData] = useState([])
  
   const options = {
     method: 'GET',
@@ -23,7 +26,10 @@ const Exercise = () => {
     e.preventDefault()
     let data = await fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?type=${type}`, options)
     let result = await data.json()
-    console.log(result)
+  
+    setExerciseData(result)
+    setDisplayData(true)
+    console.log(exerciseData)
   
   }
 
@@ -48,6 +54,7 @@ const Exercise = () => {
           <option value="strongman">Strongman</option>
           </Form.Select>
           <br />
+          
 
           {/* <Form.Select aria-label="Default select example" className="search-dropdown">
           <option>Focused Body Part</option>
@@ -74,16 +81,45 @@ const Exercise = () => {
         <div className="muscleImage">
           <img src="/muscle.png" alt="muscle diagram" width={550}/>
         </div>
-       
-
       </div>
+      <br />
+    </div>
 
+
+    <div className="displayExercise-container">
+
+    {displayData ? 
       <div className="exercise-display-container">
-        display exercise 
+        
+        {exerciseData.map(exercise => {
+          return (
+            <Card style={{ width: '28rem', margin: '1rem' }}>
+              <Card.Body>
+                <Card.Title>{exercise.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Muscle: {exercise.muscle}</Card.Subtitle>
+                <Card.Text>
+                  INSTRUCTION:
+                  <br />
+                  {exercise.instructions}
+                </Card.Text>
+                <Card.Link href="#">More information</Card.Link>
+              </Card.Body>
+            </Card>
+          )
+        })}
       </div>
+      :
+      <div className="exercise-display-container">Search for some exercise recommendations</div>}
+     
       
 
+
+
     </div>
+
+
+
+   
     
     
     
