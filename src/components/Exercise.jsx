@@ -1,13 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-
-
-
-
+import { useNavigate, useParams } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid';
+import {useSelector, useDispatch} from 'react-redux';
+import {storeSearchResult} from '../actions/exerciseActions'
 
 const Exercise = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
 
+ 
+
+  //change the window tab title to the page name
+  useEffect(() => {
+    document.title ="Find your exercise"
+  }, [])
+  
 
   const [type, setType] = useState("cardio")
   const [displayData, setDisplayData] = useState(false)
@@ -26,11 +35,23 @@ const Exercise = () => {
     e.preventDefault()
     let data = await fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?type=${type}`, options)
     let result = await data.json()
+
+    //add id into each data
+    let newArr = result.map(resultObj => {
+      resultObj.id = uuidv4()
+      return resultObj
+    })
+    dispatch(storeSearchResult(newArr))
+
   
-    setExerciseData(result)
+    setExerciseData(newArr)
     setDisplayData(true)
     console.log(exerciseData)
   
+  }
+
+  const handleClick = (id) =>{
+    navigate(`/details/${id}`)
   }
 
   return (
@@ -98,11 +119,10 @@ const Exercise = () => {
                 <Card.Title>{exercise.name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Muscle: {exercise.muscle}</Card.Subtitle>
                 <Card.Text>
-                  INSTRUCTION:
-                  <br />
-                  {exercise.instructions}
+                  Difficulty: &nbsp;
+                  {exercise.difficulty}
                 </Card.Text>
-                <Card.Link href="#">More information</Card.Link>
+                <Card.Link href="#" onClick={()=> handleClick(exercise.id)}>More information</Card.Link>
               </Card.Body>
             </Card>
           )

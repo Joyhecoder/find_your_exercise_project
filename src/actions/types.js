@@ -1,0 +1,1 @@
+export const    STORE_SEARCH_RESULT = "STORE_SEARCH_RESULT";

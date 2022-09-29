@@ -86,9 +86,7 @@ h3 {
   padding: 0.5rem;
 }
 
-.muscleImage {
 
-}
 
 .displayExercise-container {
   background: var(--clr-dark);
@@ -106,4 +104,15 @@ h3 {
 
 }
 
+/* details page */
+
+.detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* .instructions_sec {
+  margin: 1rem;
+} */
 
