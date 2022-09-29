@@ -1,12 +1,26 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Header = () => {
     return (
-      <ul>
-          <li> <Link to="/">Home</Link> </li>
-      
-      </ul>
+        <>
+        <Navbar bg="light" expand="lg" className="navBar">
+            <Container>
+                <Navbar.Brand href="/">Exercise Buddy</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="/exercise">Find Your Exercise</Nav.Link>
+                        <Nav.Link href="/mylist">My List</Nav.Link>   
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+        </>
     )
   }
   

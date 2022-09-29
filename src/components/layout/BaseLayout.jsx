@@ -5,7 +5,7 @@ const BaseLayout = ({children}) => {
   return (
     <>
     <Header />
-        <br /> <br />
+      
         
       {children}
     </>

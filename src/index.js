@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
+import Exercise from './components/Exercise'
+import MyList from './components/MyList'
 
 import reducers from './reducers/reducer'
 import BaseLayout from './components/layout/BaseLayout';
@@ -21,6 +23,8 @@ root.render(
       <BaseLayout>
         <Routes>
           <Route path='/' element={<App />} />
+          <Route path='/exercise' element={<Exercise />} />
+          <Route path='/mylist' element={<MyList />} />
         </Routes>
       
       </BaseLayout>
