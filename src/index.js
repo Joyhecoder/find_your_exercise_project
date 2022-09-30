@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import reduxThunk from 'redux-thunk';
 
-import {createStore} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
@@ -14,7 +16,13 @@ import reducers from './reducers/reducer'
 import BaseLayout from './components/layout/BaseLayout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-const store= createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store= createStore(reducers, null, 
+  
+  compose(applyMiddleware(reduxThunk), 
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+  
+  )
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

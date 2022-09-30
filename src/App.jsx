@@ -1,8 +1,13 @@
-import React from 'react'
-
+import React, {useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+import {loadData} from './actions/exerciseActions'
 import Carousel from 'react-bootstrap/Carousel';
 
 const App = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(loadData())
+  }, [])
   
   return (
     <Carousel >
