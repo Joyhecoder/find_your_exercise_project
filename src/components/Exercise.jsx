@@ -106,7 +106,7 @@ const Exercise = () => {
       <br />
     </div>
 
-
+    {/* display the search result */}
     <div className="displayExercise-container">
 
     {displayData ? 
