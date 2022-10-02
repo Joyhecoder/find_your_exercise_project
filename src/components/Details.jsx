@@ -13,8 +13,10 @@ const Details = () => {
     
 
     //get the id off from the URL params
-    const {exerciseID} = useParams();
+    const {exerciseID, exerciseType} = useParams();
+    
     console.log(exerciseID);
+    console.log(exerciseType)
 
     //getting stored data from state
     const exerciseData = useSelector(state => state.exercise)

@@ -10,6 +10,10 @@ const Exercise = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
+  const stateData = useSelector(state => state.exercise)
+  // console.log(stateData.cardio);
+  // console.log(stateData.powerlifting)
+
  
 
   //change the window tab title to the page name
@@ -18,56 +22,43 @@ const Exercise = () => {
   }, [])
   
 
-  const [type, setType] = useState("cardio")
+  const [exType, setExType] = useState("cardio")
   const [displayData, setDisplayData] = useState(false)
   const [exerciseData, setExerciseData] = useState([])
- 
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'a6c84714aamshd7312f736a5f530p1a827bjsn8c619e6200a6',
-      'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
-    }
-  };
+  console.log(`inside exercise ${exType}`);
   
   
-  const handleSubmit = async (e) => {
+  
+  const handleSubmit = (e) => {
     e.preventDefault()
-    let data = await fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?type=${type}`, options)
-    let result = await data.json()
-
-    //add id into each data
-    let newArr = result.map(resultObj => {
-      resultObj.id = uuidv4()
-      return resultObj
-    })
-    dispatch(storeSearchResult(newArr))
-
-  
-    setExerciseData(newArr)
+    console.log(exType);
+    console.log(stateData[exType])
     setDisplayData(true)
+    setExerciseData(stateData[exType])
     console.log(exerciseData)
+  
   
   }
 
   const handleClick = (id) =>{
+    console.log(id);
     navigate(`/details/${id}`)
   }
 
+  
+
   return (
     <>
-   
     <div className="search-container">
       <h3>Search an Exercise that meets your needs</h3>
       <br />
-    
 
       <div className="dropdown-container">
         <div>Search by Type: </div>
         <div className="inputSearch">
-          <Form.Select aria-label="Default select example" className="search-dropdown" onChange={e=>setType(e.target.value)}>
+          <Form.Select aria-label="Default select example" className="search-dropdown" onChange={e=>setExType(e.target.value)}>
           <option value="cardio">Cardio</option>
-          <option value="olympic_weightlifting">Olympic weightlifting</option>
+          <option value="olympicWeightlifting">Olympic weightlifting</option>
           <option value="plyometrics">Plyometrics</option>
           <option value="powerlifting">Powerlifting</option>
           <option value="strength">Strength</option>
@@ -75,26 +66,6 @@ const Exercise = () => {
           <option value="strongman">Strongman</option>
           </Form.Select>
           <br />
-          
-
-          {/* <Form.Select aria-label="Default select example" className="search-dropdown">
-          <option>Focused Body Part</option>
-          <option value="abdominals">Abdominals</option>
-          <option value="abductors">Abductors</option>
-          <option value="adductors">Adductors</option>
-          <option value="biceps">Biceps</option>
-          <option value="calves">Calves</option>
-          <option value="chest">Chest</option>
-          <option value="forearms">Forearms</option>
-          <option value="glutes">Glutes</option>
-          <option value="hamstrings">Hamstrings</option>
-          <option value="lats">Lats</option>
-          <option value="lowerback">Lowerback</option>
-          <option value="middleback">Middleback</option>
-          <option value="neck">Neck</option>
-          <option value="quadriceps">Quadriceps</option>
-          </Form.Select>
-          <br /> */}
 
           <input type="submit" onClick={e=>handleSubmit(e)} />
         </div>
@@ -122,7 +93,7 @@ const Exercise = () => {
                   Difficulty: &nbsp;
                   {exercise.difficulty}
                 </Card.Text>
-                <Card.Link href="#" onClick={()=> handleClick(exercise.id)}>More information</Card.Link>
+                <Card.Link  onClick={()=> handleClick(exercise)}>More information</Card.Link>
               </Card.Body>
             </Card>
           )
@@ -131,18 +102,7 @@ const Exercise = () => {
       :
       <div className="exercise-display-container">Search for some exercise recommendations</div>}
      
-      
-
-
-
-    </div>
-
-
-
-   
-    
-    
-    
+    </div> 
     </>
   )
 }

@@ -67,7 +67,7 @@ export const loadData = () => {
                 dispatch({type: LOAD_DATA, payload: {
                     cardio: newcardioresult,
                     olympicWeightlifting: newolympicWeightliftingresult,
-                    plyometric: newplyometricresult,
+                    plyometrics: newplyometricresult,
                     powerlifting: newpowerliftingresult,
                     strength: newstrengthresult,
                     stretching: newstretchingresult,

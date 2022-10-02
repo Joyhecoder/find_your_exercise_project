@@ -3,6 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Link } from 'react-router-dom'
+
+
 
 const Header = () => {
     return (
@@ -13,9 +16,10 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/exercise">Find Your Exercise</Nav.Link>
-                        <Nav.Link href="/mylist">My List</Nav.Link>   
+                        <Link className="nav-link" to = "/">Home</Link>
+                        <Link className="nav-link" to = "/exercise">Find Your Exercise</Link>
+                        <Link className="nav-link" to = "/details/:exerciseID">Detail</Link>
+                        <Link className="nav-link" to ="/mylist">My List</Link>   
                     </Nav>
                 </Navbar.Collapse>
             </Container>

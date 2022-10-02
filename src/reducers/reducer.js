@@ -1,9 +1,11 @@
 import {STORE_SEARCH_RESULT, LOAD_DATA} from '../actions/types';
 
 const reducers = (state, action) => { 
+    console.log(state)
     if(state===undefined){
         state ={
             exercise:{}
+            
         }
 
     }
