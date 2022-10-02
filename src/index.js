@@ -34,7 +34,7 @@ root.render(
         <Routes>
           <Route path='/' element={<App />} />
           <Route path='/exercise' element={<Exercise />} />
-          <Route path='/details/:exerciseID' element={<Details />} />
+          {/* <Route path='/details/:exerciseID' element={<Details />} /> */}
           <Route path='/mylist' element={<MyList />} />
         </Routes>
       

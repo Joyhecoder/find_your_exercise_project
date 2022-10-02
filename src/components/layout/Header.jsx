@@ -18,7 +18,7 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Link className="nav-link" to = "/">Home</Link>
                         <Link className="nav-link" to = "/exercise">Find Your Exercise</Link>
-                        <Link className="nav-link" to = "/details/:exerciseID">Detail</Link>
+                        {/* <Link className="nav-link" to = "/details/:exerciseID">Detail</Link> */}
                         <Link className="nav-link" to ="/mylist">My List</Link>   
                     </Nav>
                 </Navbar.Collapse>

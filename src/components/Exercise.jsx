@@ -5,14 +5,15 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import {useSelector, useDispatch} from 'react-redux';
 import {storeSearchResult} from '../actions/exerciseActions'
+import ModalDetail from './Modal'
+import Modal from "react-modal";
 
 const Exercise = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const stateData = useSelector(state => state.exercise)
-  // console.log(stateData.cardio);
-  // console.log(stateData.powerlifting)
+ 
 
  
 
@@ -40,12 +41,15 @@ const Exercise = () => {
   
   }
 
-  const handleClick = (id) =>{
-    console.log(id);
-    navigate(`/details/${id}`)
-  }
+  // const handleClick = (id) =>{
+  //   console.log(id);
+  //   navigate(`/details/${id}`)
+  // }
 
   
+
+
+
 
   return (
     <>
@@ -65,7 +69,7 @@ const Exercise = () => {
           <option value="stretching">Stretching</option>
           <option value="strongman">Strongman</option>
           </Form.Select>
-          <br />
+        <br />
 
           <input type="submit" onClick={e=>handleSubmit(e)} />
         </div>
@@ -93,7 +97,8 @@ const Exercise = () => {
                   Difficulty: &nbsp;
                   {exercise.difficulty}
                 </Card.Text>
-                <Card.Link  onClick={()=> handleClick(exercise)}>More information</Card.Link>
+                {/* <Card.Link  onClick={()=> handleClick(exercise)}>More information</Card.Link> */}
+                <ModalDetail exercise={exercise} />
               </Card.Body>
             </Card>
           )
@@ -103,6 +108,9 @@ const Exercise = () => {
       <div className="exercise-display-container">Search for some exercise recommendations</div>}
      
     </div> 
+
+
+    
     </>
   )
 }

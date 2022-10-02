@@ -88,6 +88,8 @@ h3 {
 
 
 
+
+
 .displayExercise-container {
   background: var(--clr-dark);
   padding: 0.5rem;
@@ -104,7 +106,7 @@ h3 {
 
 }
 
-/* details page */
+/* modal page */
 
 .detail-container {
   display: flex;
@@ -112,7 +114,25 @@ h3 {
   justify-content: space-evenly;
 }
 
-/* .instructions_sec {
-  margin: 1rem;
-} */
+.detail-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.detail-list {
+  margin: 1.75rem;
+  border: solid var(--clr-dark) .5rem;
+  border-radius: 5%;
+}
+
+.buttonStyle {
+  background-color: var(--clr-accent);
+  color: var(--clr-dark);
+  margin: .5rem;
+  border-color: var(--clr-light);
+  border-radius: 5%;
+  cursor: pointer;
+  padding: .5rem;
+  width: 8rem;
+}
