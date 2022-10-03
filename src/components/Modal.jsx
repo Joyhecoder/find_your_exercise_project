@@ -3,9 +3,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import Exercise from './Exercise';
+import {addToList} from '../actions/exerciseActions';
+import {useDispatch} from 'react-redux';
 
 const ModalDetail = ({exercise}) => {
 
+  const dispatch = useDispatch()
     const customStyles = {
         content: {
           top: '50%',
@@ -31,6 +34,12 @@ const ModalDetail = ({exercise}) => {
         setIsOpen(false)
        }
 
+       const handleClick = (e) => { 
+        console.log(e)
+        console.log(e.target.id)
+        dispatch(addToList(exercise))
+        }
+
   return (
     <>
     <div>
@@ -54,7 +63,7 @@ const ModalDetail = ({exercise}) => {
             </ListGroup>
 
             <div className="video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/FJmRQ5iTXKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FJmRQ5iTXKE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
             </div>
 
@@ -66,7 +75,7 @@ const ModalDetail = ({exercise}) => {
         </div>
         <button onClick={closeModal} className="buttonStyle">close</button>
       
-       <button className="buttonStyle"> Add to List</button>
+       <button className="buttonStyle" id={exercise.id} onClick={e=>handleClick(e)} > Add to List</button>
       </Modal>
     </div>
     

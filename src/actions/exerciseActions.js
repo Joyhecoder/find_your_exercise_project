@@ -1,4 +1,4 @@
-import {STORE_SEARCH_RESULT, LOAD_DATA} from './types';
+import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST} from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const loadData = () => {
@@ -86,5 +86,13 @@ export const storeSearchResult = (data) => {
     return {
         type: STORE_SEARCH_RESULT,
         exercise: data
+    }
+}
+
+export const addToList = (exercise) => {
+    console.log(`in action: ${exercise}`);
+    return {
+        type: ADD_TO_LIST,
+        myList: exercise
     }
 }

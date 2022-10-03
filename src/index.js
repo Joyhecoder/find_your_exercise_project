@@ -4,17 +4,25 @@ import reduxThunk from 'redux-thunk';
 
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
+import { persistStore, persistReducer } from 'redux-persist' 
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import Exercise from './components/Exercise'
 import MyList from './components/MyList'
-import Details from './components/Details'
+// import Details from './components/Details'
 
 import reducers from './reducers/reducer'
 import BaseLayout from './components/layout/BaseLayout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store= createStore(reducers, null, 
   
@@ -23,12 +31,11 @@ const store= createStore(reducers, null,
   )
   
   )
-
+let persistor = persistStore(store)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-  <React.StrictMode>
     <Router>
       <BaseLayout>
         <Routes>
@@ -40,8 +47,6 @@ root.render(
       
       </BaseLayout>
     </Router>
-    
-  </React.StrictMode>
   </Provider>
 );
 

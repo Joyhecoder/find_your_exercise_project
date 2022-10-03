@@ -1,11 +1,13 @@
-import {STORE_SEARCH_RESULT, LOAD_DATA} from '../actions/types';
+import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST} from '../actions/types';
 
 const reducers = (state, action) => { 
     console.log(state)
     if(state===undefined){
         state ={
+            myList: ["mylist"],
             exercise:{}
-            
+           
+
         }
 
     }
@@ -26,6 +28,16 @@ console.log("inside reducer")
                 exercise: action.payload
                 
             }
+
+        case ADD_TO_LIST:
+            console.log(action.myList);
+            console.log(`inside reducer ${state.myList}`);
+            return {
+                ...state,
+                // myList: state.myList.concat(action.myList)
+
+            }
+         
 
         default:
             return state;
