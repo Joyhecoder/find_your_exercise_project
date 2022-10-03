@@ -36,13 +36,25 @@ console.log("inside reducer")
             // console.log("reducer add_to_list has been triggered");
             // console.log(action.myList);
             // console.log(`inside reducer ${state.myList}`);
-            
-            return {
-                ...state,
-                myList: [...state.myList, action.myList]
-                // myList: "hello world"
 
+            //when the exercise was added
+            let copyofMyList = [...state.myList]
+            let isInList = false
+            copyofMyList.forEach(item =>{
+                if(item.id === action.myList.id){
+                    isInList= true
+                }
+            })
+            if(!isInList){
+                return {
+                    ...state,
+                    myList: [...state.myList, action.myList]
+                    // myList: "hello world"
+    
+                }
             }
+            
+            
 
         case DELETE_FROM_LIST:
             console.log((`inside delete from list reducer ${action.myList}`))
