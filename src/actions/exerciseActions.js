@@ -1,4 +1,4 @@
-import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST} from './types';
+import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST, DELETE_FROM_LIST} from './types';
 import { v4 as uuidv4 } from 'uuid';
 
 export const loadData = () => {
@@ -94,5 +94,13 @@ export const addToList = (exercise) => {
     return {
         type: ADD_TO_LIST,
         myList: exercise
+    }
+}
+
+export const deleteFromList = (exerciseID) => {
+    console.log(`in delete from list action: ${exerciseID}`);
+    return {
+        type: DELETE_FROM_LIST,
+        myList: exerciseID
     }
 }

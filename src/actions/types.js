@@ -1,3 +1,4 @@
 export const STORE_SEARCH_RESULT = "STORE_SEARCH_RESULT";
 export const LOAD_DATA = "LOAD_DATA"
 export const ADD_TO_LIST = "ADD_TO_LIST"
+export const DELETE_FROM_LIST = "DELETE_FROM_LIST"
