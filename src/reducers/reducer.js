@@ -3,10 +3,11 @@ import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST} from '../actions/types';
 const reducers = (state, action) => { 
     console.log(state)
     if(state===null || state==undefined){
+
         console.log('setting state');
         state = {
             myList: [],
-            exercise:{}
+            exercise:null
         }
 
         console.log(state.myList);

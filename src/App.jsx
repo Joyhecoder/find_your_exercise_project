@@ -1,12 +1,19 @@
 import React, {useEffect} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {loadData} from './actions/exerciseActions'
 import Carousel from 'react-bootstrap/Carousel';
 
 const App = () => {
   const dispatch = useDispatch()
+  const exerciseStateData = useSelector(state  =>  state.exercise)
   useEffect(() => {
-    dispatch(loadData())
+
+    if(exerciseStateData === null || exerciseStateData === undefined){
+
+      console.log('dispatching data');
+      dispatch(loadData())
+    }
+    
   }, [])
   
   return (
