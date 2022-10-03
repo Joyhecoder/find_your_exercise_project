@@ -2,13 +2,14 @@ import {STORE_SEARCH_RESULT, LOAD_DATA, ADD_TO_LIST} from '../actions/types';
 
 const reducers = (state, action) => { 
     console.log(state)
-    if(state===undefined){
-        state ={
-            myList: ["mylist"],
+    if(state===null || state==undefined){
+        console.log('setting state');
+        state = {
+            myList: [],
             exercise:{}
-           
-
         }
+
+        console.log(state.myList);
 
     }
    
@@ -30,11 +31,14 @@ console.log("inside reducer")
             }
 
         case ADD_TO_LIST:
+
+            console.log("reducer add_to_list has been triggered");
             console.log(action.myList);
             console.log(`inside reducer ${state.myList}`);
             return {
                 ...state,
-                // myList: state.myList.concat(action.myList)
+                myList: [...state.myList, action.myList]
+                // myList: "hello world"
 
             }
          

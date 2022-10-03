@@ -37,6 +37,7 @@ const ModalDetail = ({exercise}) => {
        const handleClick = (e) => { 
         console.log(e)
         console.log(e.target.id)
+        console.log("i've been clicked");
         dispatch(addToList(exercise))
         }
 
