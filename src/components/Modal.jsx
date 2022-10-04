@@ -5,9 +5,11 @@ import Modal from 'react-modal';
 // import Exercise from './Exercise';
 import {addToList} from '../actions/exerciseActions';
 import {useDispatch} from 'react-redux';
+import { toast } from 'react-toastify';
 
 const ModalDetail = ({exercise}) => {
 
+  const notify = () => toast("Workout was added! Do it!");
   //store each video url from fetch in the usestate
   const [videoSRC,setVideoSRC] = useState("")
 
@@ -61,7 +63,8 @@ const ModalDetail = ({exercise}) => {
         console.log(e.target.id)
         console.log("i've been clicked");
         dispatch(addToList(exercise))
-        
+        notify()
+
         }
 
   return (

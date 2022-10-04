@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {storeSearchResult} from '../actions/exerciseActions'
 import ModalDetail from './Modal'
 import Modal from "react-modal";
+import { ToastContainer } from 'react-toastify';
 
 const Exercise = () => {
   const dispatch = useDispatch()
@@ -80,7 +81,7 @@ const Exercise = () => {
         
         {exerciseData.map(exercise => {
           return (
-            <Card style={{ width: '28rem', margin: '1rem' }}>
+            <Card key={exercise.id} style={{ width: '28rem', margin: '1rem' }}>
               <Card.Body>
                 <Card.Title>{exercise.name}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Muscle: {exercise.muscle}</Card.Subtitle>
@@ -96,7 +97,7 @@ const Exercise = () => {
       </div>
       :
       <div className="exercise-display-container">Search for some exercise recommendations</div>}
-     
+       <ToastContainer />
     </div> 
 
 

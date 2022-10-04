@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import {loadData} from './actions/exerciseActions'
 import Carousel from 'react-bootstrap/Carousel';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   const dispatch = useDispatch()
   const exerciseStateData = useSelector(state  =>  state.exercise)
@@ -60,6 +62,7 @@ const App = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
+    
     </Carousel>
     
     
