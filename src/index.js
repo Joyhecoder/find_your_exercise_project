@@ -12,7 +12,7 @@ import './index.css';
 import App from './App';
 import Exercise from './components/Exercise'
 import MyList from './components/MyList'
-// import Details from './components/Details'
+
 
 import reducers from './reducers/reducer'
 import BaseLayout from './components/layout/BaseLayout';
@@ -41,7 +41,6 @@ root.render(
         <Routes>
           <Route path='/' element={<App />} />
           <Route path='/exercise' element={<Exercise />} />
-          {/* <Route path='/details/:exerciseID' element={<Details />} /> */}
           <Route path='/mylist' element={<MyList />} />
         </Routes>
       

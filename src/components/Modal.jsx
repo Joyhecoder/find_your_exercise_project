@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import ListGroup from 'react-bootstrap/ListGroup';
-// import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-// import Exercise from './Exercise';
 import {addToList} from '../actions/exerciseActions';
 import {useDispatch} from 'react-redux';
 import { toast } from 'react-toastify';
@@ -44,10 +42,6 @@ const ModalDetail = ({exercise}) => {
         // console.log(result.items[0].id.videoId)
         let videoID = result.items[0].id.videoId
         console.log(videoID);
-        // videoURL = `https://www.youtube.com/watch?v=${videoID}`
-        // videoURL = `https://www.youtube.com/embed/${videoID}`
-        // console.log(videoURL)
-        // videoSRC = `https://www.youtube.com/embed/${videoID}`
         setVideoSRC(`https://www.youtube.com/embed/${videoID}`)
         console.log(videoSRC);
       }
@@ -104,9 +98,6 @@ const ModalDetail = ({exercise}) => {
        <button className="buttonStyle" id={exercise.id} onClick={e=>handleClick(e)} > Add to List</button>
       </Modal>
     </div>
-    
-    
-    
     </>
   )
 }

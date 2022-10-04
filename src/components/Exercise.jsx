@@ -1,21 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-// import { useNavigate, useParams } from 'react-router-dom'
-// import { v4 as uuidv4 } from 'uuid';
-import {useSelector, useDispatch} from 'react-redux';
-// import {storeSearchResult} from '../actions/exerciseActions'
+import {useSelector} from 'react-redux';
 import ModalDetail from './Modal'
-// import Modal from "react-modal";
 import { ToastContainer } from 'react-toastify';
 
 const Exercise = () => {
-  const dispatch = useDispatch()
-  // const navigate = useNavigate();
-
+  // const dispatch = useDispatch()
   const stateData = useSelector(state => state.exercise)
  
-
   //change the window tab title to the page name
   useEffect(() => {
     document.title ="Find your exercise"
@@ -27,8 +20,6 @@ const Exercise = () => {
   const [exerciseData, setExerciseData] = useState([])
   console.log(`inside exercise ${exType}`);
   
-  
-  
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(exType);
@@ -36,8 +27,6 @@ const Exercise = () => {
     setDisplayData(true)
     setExerciseData(stateData[exType])
     console.log(exerciseData)
-  
-  
   }
 
 
