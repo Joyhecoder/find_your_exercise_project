@@ -41,15 +41,6 @@ const Exercise = () => {
   
   }
 
-  // const handleClick = (id) =>{
-  //   console.log(id);
-  //   navigate(`/details/${id}`)
-  // }
-
-  
-
-
-
 
   return (
     <>
@@ -97,7 +88,6 @@ const Exercise = () => {
                   Difficulty: &nbsp;
                   {exercise.difficulty}
                 </Card.Text>
-                {/* <Card.Link  onClick={()=> handleClick(exercise)}>More information</Card.Link> */}
                 <ModalDetail exercise={exercise} />
               </Card.Body>
             </Card>

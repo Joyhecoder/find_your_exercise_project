@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import {deleteFromList} from '../actions/exerciseActions';
 import Card from 'react-bootstrap/Card';
@@ -8,6 +8,11 @@ const MyList = () => {
   const dispatch = useDispatch()
   const myListData = useSelector(state => state.myList)
   console.log(myListData)
+
+    //change the window tab title to the page name
+    useEffect(() => {
+      document.title ="My List"
+    }, [])
 
   const handleDelete = (e) => {
     console.log(e.target.id);

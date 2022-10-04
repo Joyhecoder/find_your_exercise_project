@@ -15,6 +15,11 @@ const App = () => {
     }
     
   }, [])
+
+    //change the window tab title to the page name
+    useEffect(() => {
+      document.title ="Home Page"
+    }, [])
   
   return (
     <Carousel >
