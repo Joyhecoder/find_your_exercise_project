@@ -20,7 +20,7 @@
   --fw-bold: 900;
 
   --fs-h1: 4.5rem;
-  --fs-h2: 3.75rem;
+  --fs-h2: 2.25rem;
   --fs-h3: 1.5rem;
   --fs-body: 1.25rem;
 
@@ -51,6 +51,13 @@ body {
   height: 30%;
 }
 
+.logo {
+  color: var(--clr-dark);
+  font-size: var(--fs-h2);
+  font-family: 'Peralta', cursive;
+  font-weight: var(--fw-bold);
+}
+
 
 /* home page */
 .carousel {
@@ -76,11 +83,13 @@ body {
 }
 
 h3 {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   text-align: center;
   vertical-align: middle;
   
 }
+
+
 
 .dropdown-container {
   width: 75%;
@@ -128,6 +137,10 @@ h3 {
 
 }
 
+.title-color-style{
+  color: var(--clr-light);
+}
+
 .gif-img-container {
   display: flex;
   flex-wrap: wrap;
@@ -172,3 +185,14 @@ h3 {
   padding: .5rem;
   width: 8rem;
 }
+
+
+/* my list page */
+.myList-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-light);
+
+}
+

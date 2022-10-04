@@ -12,6 +12,7 @@ const MyList = () => {
     //change the window tab title to the page name
     useEffect(() => {
       document.title ="My List"
+      document.body.style = "background: #84a59d"
     }, [])
 
   const handleDelete = (e) => {
@@ -27,7 +28,7 @@ const MyList = () => {
            {myListData.map(exercise =>{
             return (
             
-              <Card style={{ width: '28rem', margin: '1rem' }}>
+              <Card key={exercise.id} style={{ width: '28rem', margin: '1rem' }}>
                     <Card.Body>
                       <Card.Title>{exercise.name}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">Muscle: {exercise.muscle}</Card.Subtitle>
@@ -45,7 +46,15 @@ const MyList = () => {
           })}
            </div>
         :
-        <div className="exercise-display-container">There is currently no exercise added in your list</div>
+        <div className="exercise-display-container">
+          <div className="gif-img-container">
+          <img src="https://i0.wp.com/i.pinimg.com/originals/f1/04/ca/f104ca9dc7a7626ca4e587792da17554.gif?w=1140&ssl=1" alt="cat working out" className='img-gif'/>
+          </div>
+          <div className="myList-text">
+          There is currently no exercise added in your list
+          </div>
+         
+          </div>
         }
            
     

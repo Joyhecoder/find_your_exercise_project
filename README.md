@@ -1,10 +1,8 @@
-# Getting Started with Create React App
+# Exercise Buddy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the project
 
-## Available Scripts
-
-In the project directory, you can run:
+"Exercise Buddy" is a website used for people to look up different exercises based on types of exercises. With this app, users can search various types of exercises such as cardio, strength, stretching and more. Each exercise comes with detailed information including a name of the exercise, the muscle part that is trained, difficulty level, possible equipment that is needed and an instruction on how to do the exercise with a video. Users can add exercise 
 
 ### `npm start`
 

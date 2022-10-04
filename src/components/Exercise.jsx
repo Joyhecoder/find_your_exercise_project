@@ -95,7 +95,7 @@ const Exercise = () => {
       </div>
       :
       <div className="exercise-display-container2">
-        <h3>Join your Exercise Buddy! Search for your exercise</h3>
+        <h3 className="title-color-style">Join your Exercise Buddy! Search for Your Exercise</h3>
         
         <div className="gif-img-container">
           <img src="https://i.pinimg.com/originals/43/15/38/431538fe336b95c2f004ba46df917fb4.gif" alt="cat working out" className='img-gif'/>
@@ -106,9 +106,6 @@ const Exercise = () => {
         </div>}
        <ToastContainer />
     </div> 
-
-
-    
     </>
   )
 }
