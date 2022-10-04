@@ -37,7 +37,7 @@ const ModalDetail = ({exercise}) => {
         let newStr = exercise.name.split(" ").join('')
         console.log(newStr);
         //fetch youtube api
-        let data = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${newStr}&topicId=fitness&categoryId=fitness&key=AIzaSyAQPugEUJfkNsG-oKCph7fPls9lQJ-QG3Q&type=video`)
+        let data = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${newStr}&topicId=fitness&categoryId=fitness&key=${process.env.REACT_APP_GOOGLE_API}&type=video`)
        
         let result = await data.json()
         console.log(result)
