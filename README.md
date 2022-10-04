@@ -2,67 +2,42 @@
 
 ## About the project
 
-"Exercise Buddy" is a website used for people to look up different exercises based on types of exercises. With this app, users can search various types of exercises such as cardio, strength, stretching and more. Each exercise comes with detailed information including a name of the exercise, the muscle part that is trained, difficulty level, possible equipment that is needed and an instruction on how to do the exercise with a video. Users can add exercise 
+"Exercise Buddy" is a website used for people to look up different exercises based on types of exercises. With this app, users can search various types of exercises such as cardio, strength, stretching and more. Each exercise comes with detailed information including a name of the exercise, the muscle part that is trained, difficulty level, possible equipment that is needed and an instruction on how to do the exercise with a video. Users can add the exercise they like into My List. 
 
-### `npm start`
+### Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Javascript
+* React
+* Redux
+* NPM 
+* Restful API
+* Google API
+* HTML
+* CSS
+* Bootstrap
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Screenshots of the webpage:
+![Screenshot](homepage.png)
+![Screenshot](findyourexercise1.png)
+![Screenshot](exerciselist.png)
+![Screenshot](exercisedetailmodal.png)
+![Screenshot](mylistwithnolist.png)
+![Screenshot](mylistwithlist.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Challenge
 
-### `npm run build`
+* The initial fetch for the exercise data required redux-thunk. The fetch was also initially done in exercise component when users submit the choice of the exercise type. To avoid calling API fetch each time when users submit a type request, the exercise fetching action was triggered in the homepage once the web page is loaded.
+* When fetching the Youtube video, the video ID needed to be converted into the iframe format and then stored it into hook by using useState. A variable cannot be inserted into iframe but using useState can make it happen. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Manjuan He**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Portfolio](https://manjuanhe.com)
+- [GitHub](https://github.com/Joyhecoder)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
