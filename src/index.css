@@ -93,6 +93,15 @@ h3 {
   padding: 0.5rem;
 }
 
+.muscleImage {
+  object-fit: contain;
+  object-position: center;
+  height: 40vh;
+  overflow:visible;
+  max-width: 100%;
+}
+
+
 .displayExercise-container {
   background: var(--clr-dark);
   padding: 0.5rem;

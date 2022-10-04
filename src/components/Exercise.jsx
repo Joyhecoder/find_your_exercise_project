@@ -64,8 +64,8 @@ const Exercise = () => {
           <input type="submit" onClick={e=>handleSubmit(e)} />
         </div>
 
-        <div className="muscleImage">
-          <img src="/muscle.png" alt="muscle diagram" width={550}/>
+        <div >
+          <img src="/muscle.png" alt="muscle diagram" className="muscleImage" />
         </div>
       </div>
       <br />
