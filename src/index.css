@@ -72,14 +72,13 @@ body {
 
 /* find your exercise page */
 .search-container{
-  
   background-color: var(--clr-light);
-
 }
 
 h3 {
   padding-top: 1rem;
   text-align: center;
+  vertical-align: middle;
   
 }
 
@@ -89,20 +88,15 @@ h3 {
   justify-content: space-around;
   flex-wrap: wrap;
   margin: auto;
- 
-
   border: 2px solid var(--clr-dark);
   border-radius: 5px;
   padding: 0.5rem;
 }
 
-
-
-
-
 .displayExercise-container {
   background: var(--clr-dark);
   padding: 0.5rem;
+ 
 }
 
 
@@ -113,6 +107,29 @@ h3 {
   flex-wrap: wrap;
   border: 2px solid var(--clr-light);
   border-radius: 5px;
+
+}
+.exercise-display-container2 {
+  display: flexbox;
+  justify-content: center;
+  margin: 1.5rem;
+  flex-wrap: wrap;
+  border: 2px solid var(--clr-light);
+  border-radius: 5px;
+
+}
+
+.gif-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.img-gif {
+  object-fit: cover;
+  object-position: center;
+  height: 30vh;
+  overflow: hidden;
 
 }
 

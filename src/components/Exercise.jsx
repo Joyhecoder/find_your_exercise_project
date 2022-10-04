@@ -1,21 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import { useNavigate, useParams } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid';
+// import { useNavigate, useParams } from 'react-router-dom'
+// import { v4 as uuidv4 } from 'uuid';
 import {useSelector, useDispatch} from 'react-redux';
-import {storeSearchResult} from '../actions/exerciseActions'
+// import {storeSearchResult} from '../actions/exerciseActions'
 import ModalDetail from './Modal'
-import Modal from "react-modal";
+// import Modal from "react-modal";
 import { ToastContainer } from 'react-toastify';
 
 const Exercise = () => {
   const dispatch = useDispatch()
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const stateData = useSelector(state => state.exercise)
- 
-
  
 
   //change the window tab title to the page name
@@ -96,7 +94,16 @@ const Exercise = () => {
         })}
       </div>
       :
-      <div className="exercise-display-container">Search for some exercise recommendations</div>}
+      <div className="exercise-display-container2">
+        <h3>Join your Exercise Buddy! Search for your exercise</h3>
+        
+        <div className="gif-img-container">
+          <img src="https://i.pinimg.com/originals/43/15/38/431538fe336b95c2f004ba46df917fb4.gif" alt="cat working out" className='img-gif'/>
+          <img src="https://i.pinimg.com/originals/10/e6/59/10e6591f0ec9515b71c10af42c3d9d95.gif" alt="cat working out" className='img-gif' />
+          <img src="https://i.pinimg.com/originals/ee/d7/71/eed771aeaaa425d9706c9fac5435899a.gif" alt="cat working out" className='img-gif'/>
+        </div>
+        
+        </div>}
        <ToastContainer />
     </div> 
 
